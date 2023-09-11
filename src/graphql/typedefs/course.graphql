@@ -1,0 +1,8 @@
+# Types
+type Course {
+  id: Int
+  course_title: String
+  course_description: String
+  status: Int
+  creation: String
+}

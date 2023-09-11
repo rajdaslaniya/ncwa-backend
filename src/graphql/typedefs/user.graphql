@@ -1,0 +1,19 @@
+type User {
+  id: Int
+  name: String
+  otp: String
+  email: String
+  is_council_member: Boolean
+  is_email_verified: Boolean
+  phone_number: String
+  address: String
+  group_id: Int
+  isActive: Boolean
+  created_date: String
+  updated_date: String
+  is_active: Boolean
+}
+
+type OtpVerify {
+  isVerified: Boolean
+}

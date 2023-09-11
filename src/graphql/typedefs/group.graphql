@@ -1,0 +1,6 @@
+type Group {
+  id: Int
+  name: String
+  created_date: String
+  updated_date: String
+}

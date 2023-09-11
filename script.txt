@@ -1,0 +1,33 @@
+CREATE TABLE mfa_groups (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  created_date TIMESTAMP,
+  updated_date TIMESTAMP,
+  is_active BOOLEAN DEFAULT true
+);
+
+CREATE TABLE user_roles (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  created_date TIMESTAMP,
+  updated_date TIMESTAMP,
+  is_active BOOLEAN DEFAULT true
+);
+
+CREATE TABLE users_data (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255),
+  otp VARCHAR(20),
+  phone_number VARCHAR(20),
+  address VARCHAR(255),
+  is_email_verified BOOLEAN DEFAULT false,
+  group_id INT REFERENCES mfa_groups(id),
+  role_id INT REFERENCES user_roles(id),
+  is_council_member BOOLEAN,
+  created_date TIMESTAMP,
+  updated_date TIMESTAMP,
+  expiration_time TIMESTAMP,
+  is_active BOOLEAN DEFAULT true
+);

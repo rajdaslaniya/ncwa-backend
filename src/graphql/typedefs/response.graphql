@@ -1,0 +1,44 @@
+type CheckUserEmailResponse {
+  message: String!
+  success: Boolean!
+  status: Int
+  is_email_sent: Boolean!
+  is_user_registered: Boolean
+  data: User
+}
+
+type GetAllUserResponse {
+  message: String!
+  success: Boolean!
+  status: Int
+  data: [User]
+}
+
+type loginUserResponse {
+  message: String!
+  success: Boolean!
+  status: Int
+  token: String
+  data: User
+}
+
+type UserRegistrationResponse {
+  message: String!
+  success: Boolean!
+  status: Int
+  token: String
+  data: User
+}
+
+type ResendOtpResponse {
+  message: String!
+  success: Boolean!
+  status: Int
+  is_email_sent: Boolean
+}
+
+type VerifyOtpResponse {
+  message: String!
+  success: Boolean!
+  status: Int
+}

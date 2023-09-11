@@ -1,0 +1,105 @@
+type Query {
+  GetGroup: [Group]
+  GetCourse: [Course]
+  GetAllUser: GetAllUserResponse
+  GetAssessmentDetail(assessment_id: Int!): [AssessmentDetail]
+}
+
+type Mutation {
+  createUser(
+    email: String
+    password: String
+    first_name: String
+    middle_name: String
+    last_name: String
+    entry_reason: Int
+    work_address_line1: String
+    work_address_line2: String
+    work_address_city: String
+    work_address_state: String
+    work_address_zipCode: Int
+    phone_number: String
+    group_id: Int
+    is_member: Boolean
+    organization: String
+    job_title: String
+    is_news_subscribed: Boolean
+    is_public: Boolean
+    instructor_certificate_status: String
+    instructor_accredited_date: String
+    instructor_anniversary_date: String
+    dietary_restriction: String
+    dietary_restriction_other: String
+    adult_certification_date: String
+    adult_anniversary_date: String
+    youth_certification_date: String
+    youth_anniversary_date: String
+    teen_certification_date: String
+    teen_anniversary_date: String
+    sponsor_status: String
+    primary_organization_name: String
+    primary_organization_id: String
+    secondary_organization_name: String
+    secondary_organization_id: String
+    tertiary_organization_name: String
+    tertiary_organization_id: String
+  ): User
+
+  updateUser(
+    id: String
+    email: String
+    password: String
+    first_name: String
+    middle_name: String
+    last_name: String
+    entry_reason: String
+    work_address_line1: String
+    work_address_line2: String
+    work_address_city: String
+    work_address_state: String
+    work_address_zipCode: String
+    phone_number: String
+    group_id: Int
+    is_member: Boolean
+    organization: String
+    job_title: String
+    is_news_subscribed: Boolean
+    is_public: Boolean
+    instructor_certificate_status: String
+    instructor_accredited_date: String
+    instructor_anniversary_date: String
+    dietary_restriction: String
+    dietary_restriction_other: String
+    adult_certification_date: String
+    adult_anniversary_date: String
+    youth_certification_date: String
+    youth_anniversary_date: String
+    teen_certification_date: String
+    teen_anniversary_date: String
+    sponsor_status: String
+    primary_organization_name: String
+    primary_organization_id: String
+    secondary_organization_name: String
+    secondary_organization_id: String
+    tertiary_organization_name: String
+    tertiary_organization_id: String
+  ): User
+
+  userRegistration(
+    password: String!
+    email: String!
+    name: String!
+    phone_number: String!
+    address: String!
+    is_council_member: Boolean!
+    group_id: Int!
+  ): UserRegistrationResponse
+
+  deleteUser(id: String): User
+
+  resendOtp(email: String!): ResendOtpResponse
+  verifyOtp(email: String!, otp: String!): VerifyOtpResponse
+
+  loginUser(email: String!, password: String!): loginUserResponse
+  checkUserEmail(email: String!): CheckUserEmailResponse
+}

@@ -13,7 +13,7 @@ const start = async () => {
       `🚀  GraphQL server running at port: ${process.env.PORT || 4001}`
     );
   } catch (err) {
-    console.log("Not able to run GraphQL server");
+    console.log("Not able to run GraphQL server", err);
   }
 };
 

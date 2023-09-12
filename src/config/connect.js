@@ -3,8 +3,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const sequelize = new Sequelize("ncwa-backend", "postgres", "Raj@21799", {
-  host: "localhost",
+const sequelize = new Sequelize({
+  database: "ohouahuz",
+  username: "ohouahuz",
+  password: "39XprzBd_8xm3fxh2uLcffuSLaimoTyu",
+  host: "silly.db.elephantsql.com",
   port: 5432,
   dialect: "postgres",
   pool: {

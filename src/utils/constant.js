@@ -1,4 +1,5 @@
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
+
 export const SALT_ROUNDS = 10;
 
 dotenv.config();

@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
 import createServer from "./src/graphql";
 import sequelize from "./src/config/connect";
 

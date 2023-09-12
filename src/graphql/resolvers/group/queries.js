@@ -1,7 +1,7 @@
 import GroupModel from "../../../models/mfa_groups.model";
 
 const groupQueries = {
-  GetGroup: async () => {
+  getGroup: async () => {
     try {
       const data = await GroupModel.findAll({ where: { is_active: true } });
       return data;

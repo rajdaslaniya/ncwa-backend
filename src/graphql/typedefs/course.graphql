@@ -1,8 +1,8 @@
 # Types
 type Course {
   id: Int
-  course_title: String
-  course_description: String
-  status: Int
-  creation: String
+  name: String
+  description: String
+  created_date: String
+  updated_date: String
 }

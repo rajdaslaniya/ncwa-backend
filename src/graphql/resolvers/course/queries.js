@@ -1,12 +1,11 @@
-import pool from "../../../config/db";
+import CourseModel from "../../../models/course.model";
 
 const courseQueries = {
-  GetCourse: async () => {
+  getCourse: async () => {
     try {
       // const client = await pool.connect();
-      const result = await pool.query("SELECT * FROM course where status = 1");
-      console.log(result.rows);
-      return result.rows;
+      const data = await CourseModel.findAll({ where: { is_active: true } });
+      return data;
     } catch (error) {
       console.log("catch--", error);
       return error;

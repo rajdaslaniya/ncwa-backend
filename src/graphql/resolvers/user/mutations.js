@@ -232,7 +232,7 @@ const userMutations = {
       const data = await UsersModel.findOne({
         where: { email },
       });
-      if (data.otp == otp && new Date(data.expiration_time) > new Date()) {
+      if (data.otp == otp) {
         await UsersModel.update(
           { updated_date: new Date(), is_email_verified: true },
           { where: { email } }
@@ -326,7 +326,8 @@ const userMutations = {
             is_email_verified: false,
             expiration_time: new Date(Date.now() + 10 * 60 * 1000),
             updated_date: new Date(),
-            is_user_registered: data.name.length > 0 ? true : false,
+            is_user_registered:
+              data.name && data.name.length > 0 ? true : false,
           },
           { where: { email } }
         );
@@ -336,7 +337,7 @@ const userMutations = {
         success: true,
         status: 200,
         is_email_sent: !data.is_email_verified,
-        is_user_registered: data.name.length > 0 ? true : false,
+        is_user_registered: data.name && data.name.length > 0 ? true : false,
         data,
       };
     } catch (error) {

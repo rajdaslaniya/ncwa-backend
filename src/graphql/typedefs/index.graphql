@@ -1,6 +1,6 @@
 type Query {
-  GetGroup: [Group]
-  GetCourse: [Course]
+  getGroup: [Group]
+  getCourse: [Course]
   GetAllUser: GetAllUserResponse
   GetAssessmentDetail(assessment_id: Int!): [AssessmentDetail]
 }

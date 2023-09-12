@@ -6,6 +6,15 @@ CREATE TABLE mfa_groups (
   is_active BOOLEAN DEFAULT true
 );
 
+CREATE TABLE course (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  description text,
+  created_date TIMESTAMP,
+  updated_date TIMESTAMP,
+  is_active BOOLEAN DEFAULT true
+);
+
 CREATE TABLE user_roles (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
